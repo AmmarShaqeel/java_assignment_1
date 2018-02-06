@@ -10,7 +10,9 @@ public class Virtual_Dice_Throwing {
       throws IllegalArgumentException, ArithmeticException {
 
         Scanner input = new Scanner(System.in);
+		System.out.println("Please input the number of sides");
         int sides = input.nextInt();
+		System.out.println("Please input the number of throws (should be a multiple of the number of sides!)");
         int times = input.nextInt();
         int numberOfTimes[] = new int[sides];
 
@@ -38,7 +40,7 @@ public class Virtual_Dice_Throwing {
             }
 
             for (int m=0; m<sides; m++) {
-            System.out.println(" \n Side " + (m+1) + " occured " + numberOfTimes[m] + " times");
+            System.out.println("\nSide " + (m+1) + " occured " + numberOfTimes[m] + " times");
             }
 
             System.out.println(" ");
