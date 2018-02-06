@@ -35,10 +35,13 @@ public class Virtual_Dice_Throwing {
             }
 
             System.out.println("The final array is:");
+			System.out.print("[ ");
             for (int l=0; l<sides; l++) {
               System.out.print(numberOfTimes[l] + " ");
             }
-
+			System.out.print("]");
+			System.out.println("");
+			
             for (int m=0; m<sides; m++) {
             System.out.println("\nSide " + (m+1) + " occured " + numberOfTimes[m] + " times");
             }
