@@ -27,4 +27,14 @@ public class Point extends Shape{
 	public void setY(int yval){
 		y = yval;
 	}
+
+    public String getName()
+    {
+        return "Point";
+    }
+
+    public String toString()
+    {
+        return "[" + x + "," + y + "]";
+    }
 }

@@ -1,4 +1,5 @@
 public class Circle extends Point {
+
     private double r; //radius of circle
 
     public Circle(){
@@ -6,7 +7,7 @@ public class Circle extends Point {
         r = 0;
     }
 
-    public Circle (int x;int y;double r;)
+    public Circle (int x,int y,double r)
     {
         super(x,y);
         setRadius(r);
@@ -27,17 +28,15 @@ public class Circle extends Point {
         return Math.PI * r *r;
     }
 
-    public string getName()
+    public String getName()
     {
         return "Circle";
     }
 
-    public s
-
-
-
-
-
+    public String toString()
+    {
+        return "C = " + super.toString() + ";R = " + r;
+    }
            
 
 }       

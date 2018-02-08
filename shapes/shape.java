@@ -1,6 +1,6 @@
 public abstract class Shape{
 	
-	public abstract string getName();
+	public abstract String getName();
 	
 	public double getArea(){
 		return 0;
