@@ -87,7 +87,12 @@ public class Menu {
                                 break;
                             }
 
+                            System.out.println();
                             System.out.println(shapes[k].getName());
+                            System.out.println(shapes[k].toString());
+                            System.out.println(shapes[k].getArea());
+                            System.out.println(shapes[k].getVolume());
+                            System.out.println();
                             
                         }
                         break;
