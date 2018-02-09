@@ -17,25 +17,32 @@ public class Menu {
 
             try {
                 Scanner input = new Scanner(System.in);
-                System.out.print("Please input the ting you want: ");
-                System.out.println("2.Point 3.Circle 4.Cylinder 5.Print everyting 0.exit");
+
+                int choice = 0;
+                System.out.print("input arguments for the shape you want:");
+                System.out.println("2.Point 3.Circle 4.Cylinder");
         
                 System.out.print("i = ");
                 System.out.println(i);
 
-                int choice = input.nextInt();
+                String argString = input.nextLine();
+                String[] argArray = argString.trim().split(" ");
+                choice  = argArray.length;
+
+                if (choice < 1){
+                    System.out.println("not enough inputs!");
+                    continue;
+                } else if (choice > 4) {
+                    System.out.println("too many arguments!");
+                    continue;
+                }
+                
                 switch(choice) {
- 
-                    case 0: 
-                        System.out.println("exiting system");
-                        System.exit(0);
 
                     case 2: 
-                        System.out.println("input xval");
-                        xval = input.nextInt();
+                        xval = Integer.parseInt(argArray[0]);
 
-                        System.out.println("input yval");
-                        yval = input.nextInt();
+                        yval = Integer.parseInt(argArray[1]);
 
                         Point point = new Point(xval, yval);
                         shapes[i] = point;
@@ -44,14 +51,11 @@ public class Menu {
                         break;
 
                     case 3: 
-                        System.out.println("input xval");
-                        xval = input.nextInt();
+                        xval = Integer.parseInt(argArray[0]);
 
-                        System.out.println("input yval");
-                        yval = input.nextInt();
+                        yval = Integer.parseInt(argArray[1]);
 
-                        System.out.println("input radius");
-                        r = input.nextDouble();
+                        r = Double.parseDouble(argArray[2]);
 
                         Circle circle = new Circle(xval, yval, r);
                         shapes[i] = circle;
@@ -59,25 +63,40 @@ public class Menu {
                         break;
 
                     case 4: 
-                        System.out.println("input xval");
-                        xval = input.nextInt();
+                        xval = Integer.parseInt(argArray[0]);
 
-                        System.out.println("input yval");
-                        yval = input.nextInt();
+                        yval = Integer.parseInt(argArray[1]);
 
-                        System.out.println("input radius");
-                        r = input.nextDouble();
+                        r = Double.parseDouble(argArray[2]);
 
-                        System.out.println("input height");
-                        h = input.nextDouble();
+                        h = Double.parseDouble(argArray[3]);
 
                         Cylinder cylinder = new Cylinder(xval, yval, r, h);
                         shapes[i] = cylinder;
                         i++;
                         break;
  
-                    case 5: 
-                        System.out.println("Printing everything");
+                    default:    
+                        System.out.println("invalid input, try again");
+                        break;
+            }
+
+               System.out.print("do you want to: ");
+               System.out.print("1. print another number, 2. print everything");              
+               System.out.println(" 0. exit");
+               choice = input.nextInt();             
+
+               switch(choice)
+               {
+                   case 0:
+                       System.out.println("exiting");
+                       System.exit(0);
+
+                   case 1:
+                       break;
+                       
+                   case 2:
+						System.out.println("Printing everything");
 
                         for(int k=0;k<shapes.length;k++)
                         {
@@ -95,16 +114,21 @@ public class Menu {
                             System.out.println();
                             
                         }
-                        break;
-
-                    default:    
-                        System.out.println("invalid input, try again");
-                        break;
+						break;
                }
+
+
+
+
             }
                 catch (ArithmeticException e) {
                 System.err.printf("Exception: %s \n", e);
                 System.err.printf("Numbers should be positive integers different than zero   \n");
+                }
+
+                catch (NumberFormatException e) {
+                System.err.printf("Exception: %s \n", e);
+                System.err.printf("integers please \n");
                 }
 
                 catch (InputMismatchException e) {
