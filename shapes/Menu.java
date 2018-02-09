@@ -106,7 +106,10 @@ public class Menu {
                 System.err.printf("Exception: %s \n", e);
                 System.err.printf("Numbers should be positive integers different than zero   \n");
                 }
-
+                catch (NumberFormatException e) {
+                     System.err.printf("Exception: %s \n", e);
+                     System.err.printf("integers please \n");
+                }
                 catch (InputMismatchException e) {
                 System.err.printf("Exception: %s \n", e);
                 System.err.printf("Inputs should be integers \n");
